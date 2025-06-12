@@ -21,13 +21,21 @@ This project demonstrates an automatic LPG (Liquefied Petroleum Gas) leak detect
 
 ## 🔧 How It Works
 
-1. The MQ6 sensor reads the gas concentration continuously.
-2. If the sensor value exceeds the defined threshold, the servo motor rotates to **90°** (valve closed).
-3. When the gas level drops below the threshold, the servo returns to **0°** (valve open).
-4. System status is printed on the Serial Monitor every 5 seconds.
+•	The MQ6 sensor continuously monitors the gas concentration.
+•	If the gas level exceeds a preset threshold, the servo motor rotates to close the gas valve.
+•	When the gas level returns to safe limits, the servo motor rotates back to reopen the valve.
+•	System status is printed every 5 seconds via the Serial Monitor.
+
+## 🛠️ Setup Instructions
+
+1.Connect the MQ6 sensor to ESP32's analog pin (GPIO 34).
+2.Connect the servo motor to digital pin (GPIO 18).
+3.Upload the code using Arduino IDE.
+4.Open the Serial Monitor (115200 baud rate) to see gas levels and system messages.
+
 ## 💻 Code
 ```cpp
- #include <ESP32Servo.h>
+#include <ESP32Servo.h>
 
 #define MQ6_PIN 34             
 #define THRESHOLD 1150         
