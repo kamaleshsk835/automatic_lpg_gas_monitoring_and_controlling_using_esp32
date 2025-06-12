@@ -26,6 +26,7 @@ This project demonstrates an automatic LPG (Liquefied Petroleum Gas) leak detect
 3. When the gas level drops below the threshold, the servo returns to **0°** (valve open).
 4. System status is printed on the Serial Monitor every 5 seconds.
 ## 💻 Code
+```cpp
  #include <ESP32Servo.h>
 
 #define MQ6_PIN 34             
